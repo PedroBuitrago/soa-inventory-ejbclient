@@ -6,6 +6,8 @@
 package co.com.qabox.soainv.to;
 
 import java.io.Serializable;
+import java.util.HashMap;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -26,8 +28,19 @@ public class TechnicalServiceTO extends AbstractTO implements Serializable{
     private ResponsibleTO devResponsible;
     private ResponsibleTO devOpsResponsible;
     private ServiceVersionTO version;
+    private HashMap<String, Object> features;
+    
+    
 
-    public ServiceVersionTO getVersion() {
+    public HashMap<String, Object> getFeatures() {
+		return features;
+	}
+
+	public void setFeatures(HashMap<String, Object> features) {
+		this.features = features;
+	}
+
+	public ServiceVersionTO getVersion() {
 		return version;
 	}
 
