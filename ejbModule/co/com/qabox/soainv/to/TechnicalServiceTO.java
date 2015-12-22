@@ -25,8 +25,17 @@ public class TechnicalServiceTO extends AbstractTO implements Serializable{
     private ResponsibleTO opsResponsible;
     private ResponsibleTO devResponsible;
     private ResponsibleTO devOpsResponsible;
+    private ServiceVersionTO version;
 
-    public BusinessServiceTO getBusinssService() {
+    public ServiceVersionTO getVersion() {
+		return version;
+	}
+
+	public void setVersion(ServiceVersionTO version) {
+		this.version = version;
+	}
+
+	public BusinessServiceTO getBusinssService() {
         return businssService;
     }
 

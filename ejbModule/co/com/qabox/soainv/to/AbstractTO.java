@@ -18,7 +18,7 @@ public class AbstractTO  {
     private Integer id;
     private String name;
     private String desc;
-
+    
     public String getDesc() {
         return desc;
     }

@@ -18,6 +18,5 @@ public class ServiceVersionTO extends AbstractTO implements Serializable{
 	 */
 	private static final long serialVersionUID = -6104178679804499560L;
 
-
-    
+	
 }
