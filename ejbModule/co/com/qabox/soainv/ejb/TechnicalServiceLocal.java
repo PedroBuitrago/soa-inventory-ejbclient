@@ -7,6 +7,8 @@ package co.com.qabox.soainv.ejb;
 
 import javax.ejb.Local;
 
+import co.com.qabox.soainv.to.TechnicalServiceTO;
+
 /**
  *
  * @author pbuitrag
@@ -14,4 +16,6 @@ import javax.ejb.Local;
 @Local
 public interface TechnicalServiceLocal {
     
+	public boolean saveInfo(TechnicalServiceTO to);
+	
 }
