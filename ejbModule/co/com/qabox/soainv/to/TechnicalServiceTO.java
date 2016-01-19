@@ -8,9 +8,8 @@ package co.com.qabox.soainv.to;
 import java.io.Serializable;
 import java.util.HashMap;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Alternative;
-import javax.enterprise.inject.Any;
 import javax.inject.Named;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -19,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author pbuitrag
  */
 @Named("techServTo")
-@RequestScoped
+@SessionScoped
 @XmlRootElement
 @Alternative
 public class TechnicalServiceTO extends AbstractTO implements Serializable{
