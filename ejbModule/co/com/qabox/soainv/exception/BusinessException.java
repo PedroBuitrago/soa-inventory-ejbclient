@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.com.qabox.soainv.exceptions;
+package co.com.qabox.soainv.exception;
 
 /**
  *
@@ -16,5 +16,9 @@ public class BusinessException extends RuntimeException{
 	public BusinessException(String message) {
         super(message);
     }
+	
+	public BusinessException(String message, Throwable t){
+		super(message, t);
+	}
     
 }
