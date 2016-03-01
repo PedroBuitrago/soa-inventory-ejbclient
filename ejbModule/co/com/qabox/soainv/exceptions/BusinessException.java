@@ -9,7 +9,7 @@ package co.com.qabox.soainv.exceptions;
  *
  * @author pbuitrag
  */
-public class BusinessException extends Exception{
+public class BusinessException extends RuntimeException{
     
     private static final long serialVersionUID = 3408869317186517461L;
 
