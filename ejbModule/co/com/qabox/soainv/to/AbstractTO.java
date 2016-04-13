@@ -18,6 +18,7 @@ public class AbstractTO  {
     private Integer id;
     private String name;
     private String desc;
+    private String alias;
     
     public String getDesc() {
         return desc;
@@ -44,6 +45,15 @@ public class AbstractTO  {
     public void setName(String name) {
         this.name = name;
     }
+
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+    
     
     
     

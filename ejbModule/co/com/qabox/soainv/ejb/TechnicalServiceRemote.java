@@ -7,7 +7,6 @@ package co.com.qabox.soainv.ejb;
 
 import javax.ejb.Remote;
 
-import co.com.qabox.soainv.exception.SoaInventoryException;
 import co.com.qabox.soainv.to.TechnicalServiceTO;
 
 /**
@@ -15,6 +14,6 @@ import co.com.qabox.soainv.to.TechnicalServiceTO;
  * @author pbuitrag
  */
 @Remote
-public interface TechnicalServiceRemote {
-	public boolean saveInfo(TechnicalServiceTO to) throws SoaInventoryException;
+public interface TechnicalServiceRemote extends EEServicesInterface<TechnicalServiceTO>{
+	
 }

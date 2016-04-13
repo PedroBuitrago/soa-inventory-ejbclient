@@ -7,7 +7,6 @@ package co.com.qabox.soainv.ejb;
 
 import javax.ejb.Local;
 
-import co.com.qabox.soainv.exception.SoaInventoryException;
 import co.com.qabox.soainv.to.TechnicalServiceTO;
 
 /**
@@ -15,8 +14,6 @@ import co.com.qabox.soainv.to.TechnicalServiceTO;
  * @author pbuitrag
  */
 @Local
-public interface TechnicalServiceLocal {
-    
-	public boolean saveInfo(TechnicalServiceTO to) throws SoaInventoryException;
+public interface TechnicalServiceLocal extends EEServicesInterface<TechnicalServiceTO> {
 	
 }
