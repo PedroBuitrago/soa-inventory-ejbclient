@@ -1,5 +1,6 @@
 package co.com.qabox.soainv.to.identity;
 
+import javax.inject.Named;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.Email;
 
+@Named("identityDTO")
 @XmlRootElement(name="IdentityDTO")
 @XmlAccessorType( XmlAccessType.FIELD )
 public class IdentityDTO {
@@ -28,7 +30,7 @@ public class IdentityDTO {
 	@NotNull
 	private String pass;
 	@XmlAttribute
-	private String firtName;
+	private String firstName;
 	@XmlAttribute
 	private String lastName;
 	@XmlAttribute
@@ -67,11 +69,11 @@ public class IdentityDTO {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	public String getFirtName() {
-		return firtName;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirtName(String firtName) {
-		this.firtName = firtName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	public String getLastName() {
 		return lastName;
@@ -93,21 +95,24 @@ public class IdentityDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public final static boolean basicValidation(IdentityDTO identity){
+	public static final boolean basicValidation(IdentityDTO identity){
+		
+		System.out.println("Ejecutando una validación básica de identity: " + identity);
+		
 		if ( identity != null && identity.getUser() != null && !identity.getUser().isEmpty() 
 		&& identity.getPass() != null && !identity.getPass().isEmpty() 
-		&& identity.getRole() != null && identity.getRole().getCode() != null && !identity.getRole().getCode().isEmpty()
-		)
+		&& identity.getRole() != null && identity.getRole().getCode() != null && !identity.getRole().getCode().trim().isEmpty() 
+		&& !identity.getRole().getCode().trim().equalsIgnoreCase("0")
+		){
 			return true;
+		}
 		return false;
 	}
 	@Override
 	public String toString() {
 		return "IdentityDTO [id=" + id + ", user=" + user + ", firtName="
-				+ firtName + ", lastName=" + lastName + ", role=" + role + ", infoRole=" + role.getCode()
+				+ firstName + ", lastName=" + lastName + ", role=" + role + ", roleCode=" + role.getCode()
 				+ ", email=" + email + ", authenticated=" + authenticated + "]";
 	}
-	
-	
 	
 }
